@@ -9,56 +9,65 @@
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <title>Daily Tracker</title>
 <style>
-:root{color-scheme:dark;--bg:#111;--panel:#1b1b1b;--panel2:#242424;--line:#303030;--text:#f2f2f2;--muted:#929292;--green:#9bc6aa;--green-dark:#203329}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
-main{max-width:560px;margin:auto;padding:24px 18px 42px}
-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
-.brand{font-size:19px;font-weight:750;letter-spacing:-.6px}.dot{color:var(--green)}
-.iconbtn,button{border:0;color:var(--text);background:var(--panel2);border-radius:12px;padding:10px 13px;font:inherit}
-h1{font-size:34px;line-height:1.1;letter-spacing:-1.3px;margin:4px 0 5px}.eyebrow{color:var(--muted);font-size:11px;letter-spacing:1.6px;text-transform:uppercase}
-.sub{color:var(--muted);margin:0 0 22px;font-size:13px}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}
-.stat,.section{background:var(--panel);border:1px solid #252525;border-radius:18px;padding:16px}
-.stat strong{display:block;font-size:27px;letter-spacing:-1px}.stat span{color:var(--muted);font-size:12px}
-.progress-head,.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.progress-head{font-size:12px;color:var(--muted);margin:22px 2px 9px}
-.track{height:7px;border-radius:20px;background:#303030;overflow:hidden}.fill{height:100%;background:var(--green);width:0;transition:width .2s}
-.section{margin-top:16px}.section h2{font-size:15px;margin:0;font-weight:700}.section-head{margin-bottom:14px}
-.task-list{display:grid;gap:8px}
-.task{display:flex;align-items:center;gap:11px;padding:11px 10px;border-radius:12px;background:#222}
-.task input{appearance:none;width:20px;height:20px;border:1.5px solid #666;border-radius:6px;margin:0;flex:none;display:grid;place-items:center}
-.task input:checked{background:var(--green);border-color:var(--green)}.task input:checked:after{content:"✓";color:#15251b;font-size:14px;font-weight:900}
-.task label{flex:1;overflow-wrap:anywhere}.task.done label{color:#858585;text-decoration:line-through}
-.remove{background:transparent;color:#777;padding:4px 7px;font-size:19px}
-.addrow{display:flex;gap:8px;margin-top:12px}.addrow input{min-width:0;flex:1;background:#222;border:1px solid var(--line);border-radius:12px;color:var(--text);padding:12px;font:inherit;outline:none}
-.addrow input:focus{border-color:#777}.primary{background:var(--green);color:#17251c;font-weight:750;padding:0 16px}
-.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.dayname,.day{font-size:11px;text-align:center;color:var(--muted);padding:7px 0}
-.day{border-radius:8px;background:#242424;color:#aaa;min-height:34px;display:grid;place-items:center}.day.complete{background:var(--green-dark);color:var(--green)}.day.today{outline:1px solid var(--green);color:#fff}
-.monthnav{display:flex;align-items:center;gap:10px}.monthnav button{padding:5px 9px}
-.footer{color:#666;text-align:center;font-size:11px;margin-top:24px}
+
+:root{color-scheme:dark;--bg:#080a0b;--panel:#17191b;--panel2:#222629;--line:#303538;--text:#f4f5f5;--muted:#92999d;--green:#32d36b;--green-dark:#16472b;--red:#ff5d63;--yellow:#ffd43b;--blue:#278cff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+main{max-width:560px;margin:auto;padding:18px 16px 42px}header{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}
+.brand{font-size:17px;font-weight:800;letter-spacing:-.4px}.dot{color:var(--green)}
+.iconbtn,button{border:0;color:var(--text);background:var(--panel2);border-radius:10px;padding:9px 12px;font:inherit}
+h1{font-size:30px;line-height:1.1;letter-spacing:-1px;margin:5px 0}.eyebrow{color:var(--muted);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;font-weight:700}
+.sub{color:var(--muted);margin:0 0 19px;font-size:12px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:18px 0}.stat,.section{background:var(--panel);border:1px solid #252a2d;border-radius:15px;padding:14px}
+.stat strong{display:block;font-size:25px;letter-spacing:-1px}.stat span{color:var(--muted);font-size:11px}
+.progress-head,.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.progress-head{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:1px;margin:20px 2px 8px}
+.track{height:5px;border-radius:20px;background:#303538;overflow:hidden}.fill{height:100%;background:var(--green);width:0;transition:width .2s}
+.section{margin-top:15px}.section h2{font-size:13px;margin:0;font-weight:800}.section-head{margin-bottom:11px}
+.task-list{display:grid;gap:7px}.task{display:flex;align-items:center;gap:10px;padding:10px;border-radius:11px;background:#222629;border:1px solid #292e31}
+.task input{appearance:none;width:19px;height:19px;border:1.5px solid #6b7478;border-radius:50%;margin:0;flex:none;display:grid;place-items:center}
+.task input:checked{background:var(--green);border-color:var(--green)}.task input:checked:after{content:"✓";color:#092513;font-size:12px;font-weight:900}
+.task label{flex:1;overflow-wrap:anywhere;font-size:12px;font-weight:650}.task.done label{color:#8b9295}
+.remove{background:transparent;color:#777;padding:2px 5px;font-size:18px}
+.addrow{display:flex;gap:8px;margin-top:11px}.addrow input{min-width:0;flex:1;background:#222629;border:1px solid var(--line);border-radius:10px;color:var(--text);padding:11px;font:inherit;outline:none}
+.addrow input:focus{border-color:#778187}.primary{background:var(--blue);color:white;font-weight:750;padding:0 15px}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.dayname,.day{font-size:10px;text-align:center;color:var(--muted);padding:6px 0}
+.day{border-radius:5px;background:#292e31;color:#aab0b3;min-height:32px;display:grid;place-items:center}.day.complete{background:#176b39;color:#e4ffed}.day.today{outline:1px solid var(--green);color:#fff}
+.monthnav{display:flex;align-items:center;gap:8px}.monthnav button{padding:4px 9px}
+.footer{color:#626a6e;text-align:center;font-size:10px;margin-top:23px}
 .toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#eee;color:#111;padding:9px 14px;border-radius:20px;font-size:12px;opacity:0;pointer-events:none;transition:opacity .2s}.toast.show{opacity:1}
-@media(min-width:500px){main{padding-top:34px}}
+.group-title{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:800}.group-count{font-size:10px;background:#292f32;border-radius:5px;padding:2px 6px;color:#cbd1d3}.group-count.green{background:#153d26;color:#42df7b}.group-count.red{background:#421e21;color:#ff777c}
+.task .task-meta{font-size:9px;color:#858d91;margin-top:3px}.task .streak{font-size:9px;background:var(--yellow);color:#171717;padding:3px 6px;border-radius:5px;white-space:nowrap;font-weight:800}
+.empty{font-size:11px;color:var(--muted);padding:10px;background:#222629;border-radius:10px}
+@media(min-width:500px){main{padding-top:28px}}
+
 </style>
 </head>
 <body>
 <main>
 <header><div class="brand">daily<span class="dot">.</span>tracker</div><button class="iconbtn" id="installBtn" hidden>Instalar</button></header>
-<div class="eyebrow" id="todayLabel">SEU PROGRESSO</div>
-<h1 id="greeting">Um dia de cada vez.</h1>
+<div class="eyebrow" id="todayLabel">TODAY</div>
+<h1>Seu dia.</h1>
 <p class="sub">Pequenas ações, todos os dias.</p>
 <div class="stats">
- <div class="stat"><strong id="doneCount">0/0</strong><span>Tarefas de hoje</span></div>
+ <div class="stat"><strong id="doneCount">0/0</strong><span>Hábitos concluídos</span></div>
  <div class="stat"><strong id="monthCount">0</strong><span>Dias completos no mês</span></div>
 </div>
 <div class="progress-head"><span>PROGRESSO DE HOJE</span><strong id="percent">0%</strong></div>
 <div class="track"><div class="fill" id="progressFill"></div></div>
 <section class="section">
- <div class="section-head"><h2>Foco de hoje</h2><span class="eyebrow" id="dateShort"></span></div>
- <div class="task-list" id="taskList"></div>
- <form class="addrow" id="addForm"><input id="newTask" maxlength="70" placeholder="Adicionar uma tarefa..." autocomplete="off"><button class="primary" type="submit">+</button></form>
+ <div class="section-head"><div class="group-title">◷ Due <span class="group-count" id="dueCount">0</span></div><span class="eyebrow" id="dateShort"></span></div>
+ <div class="task-list" id="dueList"></div>
 </section>
 <section class="section">
- <div class="section-head"><h2>Seu mês</h2><div class="monthnav"><button id="prevMonth" aria-label="Mês anterior">‹</button><strong id="monthTitle" style="font-size:12px"></strong><button id="nextMonth" aria-label="Próximo mês">›</button></div></div>
+ <div class="section-head"><div class="group-title">✓ Done <span class="group-count green" id="doneSectionCount">0</span></div></div>
+ <div class="task-list" id="doneList"></div>
+</section>
+<section class="section">
+ <div class="section-head"><div class="group-title">× Missed <span class="group-count red" id="missedCount">0</span></div></div>
+ <div class="task-list" id="missedList"></div>
+</section>
+<form class="addrow" id="addForm"><input id="newTask" maxlength="70" placeholder="Adicionar um hábito..." autocomplete="off"><button class="primary" type="submit">+</button></form>
+<section class="section">
+ <div class="section-head"><h2>Histórico do mês</h2><div class="monthnav"><button id="prevMonth" aria-label="Mês anterior">‹</button><strong id="monthTitle" style="font-size:11px"></strong><button id="nextMonth" aria-label="Próximo mês">›</button></div></div>
  <div class="days" id="calendar"></div>
 </section>
 <div class="footer">SEU RITMO. SUA EVOLUÇÃO.</div>
@@ -74,27 +83,43 @@ function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.is
 function save(){localStorage.setItem(KEY,JSON.stringify(state))}
 function record(){const k=localKey();if(!state.days[k])state.days[k]={done:[]};return state.days[k]}
 function completedDay(k){const r=state.days[k];return !!(r&&state.tasks.length&&state.tasks.every(t=>r.done.includes(t.id)))}
+function habitStreak(id){let n=0,d=new Date();for(let i=0;i<365;i++){const rr=state.days[localKey(d)];if(rr&&rr.done.includes(id)){n++;d.setDate(d.getDate()-1)}else if(i===0){d.setDate(d.getDate()-1)}else break}return n}
 function render(){
  const now=new Date(),key=localKey(),r=record();
  document.getElementById('todayLabel').textContent=now.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'}).toUpperCase();
  document.getElementById('dateShort').textContent=now.toLocaleDateString('pt-BR',{day:'2-digit',month:'short'}).toUpperCase();
- const count=state.tasks.filter(t=>r.done.includes(t.id)).length,pct=state.tasks.length?Math.round(count/state.tasks.length*100):0;
+ const done=state.tasks.filter(t=>r.done.includes(t.id)),due=state.tasks.filter(t=>!r.done.includes(t.id));
+ const count=done.length,pct=state.tasks.length?Math.round(count/state.tasks.length*100):0;
  document.getElementById('doneCount').textContent=`${count}/${state.tasks.length}`;
  document.getElementById('percent').textContent=pct+'%';
  document.getElementById('progressFill').style.width=pct+'%';
  const monthPrefix=key.slice(0,7);
  document.getElementById('monthCount').textContent=Object.keys(state.days).filter(k=>k.startsWith(monthPrefix)&&completedDay(k)).length;
- const list=document.getElementById('taskList');list.innerHTML='';
- if(!state.tasks.length){list.innerHTML='<p class="sub">Adicione sua primeira tarefa acima.</p>'}
- state.tasks.forEach(t=>{
-  const row=document.createElement('div');row.className='task'+(r.done.includes(t.id)?' done':'');
-  const cb=document.createElement('input');cb.type='checkbox';cb.checked=r.done.includes(t.id);cb.id='task-'+t.id;
-  cb.addEventListener('change',()=>{const rr=record();rr.done=cb.checked?[...rr.done,t.id]:rr.done.filter(x=>x!==t.id);save();render()});
-  const label=document.createElement('label');label.htmlFor=cb.id;label.textContent=t.name;
-  const del=document.createElement('button');del.className='remove';del.type='button';del.textContent='×';del.setAttribute('aria-label','Excluir '+t.name);
-  del.addEventListener('click',()=>{if(confirm(`Excluir "${t.name}" da sua lista?`)){state.tasks=state.tasks.filter(x=>x.id!==t.id);save();render()}});
-  row.append(cb,label,del);list.append(row);
- });
+ const yesterday=new Date();yesterday.setDate(yesterday.getDate()-1);
+ const prev=state.days[localKey(yesterday)];
+ const missed=prev?state.tasks.filter(t=>!prev.done.includes(t.id)):[];
+ document.getElementById('dueCount').textContent=due.length;
+ document.getElementById('doneSectionCount').textContent=done.length;
+ document.getElementById('missedCount').textContent=missed.length;
+ function draw(id,items,isDone,emptyText){
+  const list=document.getElementById(id);list.innerHTML='';
+  if(!items.length){const p=document.createElement('div');p.className='empty';p.textContent=emptyText;list.append(p);return}
+  items.forEach(t=>{
+   const row=document.createElement('div');row.className='task'+(isDone?' done':'');
+   const cb=document.createElement('input');cb.type='checkbox';cb.checked=isDone;cb.setAttribute('aria-label','Concluir '+t.name);
+   cb.addEventListener('change',()=>{const rr=record();rr.done=cb.checked?[...rr.done,t.id]:rr.done.filter(x=>x!==t.id);save();render()});
+   const info=document.createElement('div');info.style.flex='1';info.style.minWidth='0';
+   const label=document.createElement('label');label.textContent=t.name;
+   const meta=document.createElement('div');meta.className='task-meta';meta.textContent='Diário · M T W T F S S';info.append(label,meta);
+   const streak=document.createElement('span');streak.className='streak';streak.textContent='🔥 '+habitStreak(t.id)+' dias';
+   const del=document.createElement('button');del.className='remove';del.type='button';del.textContent='×';del.setAttribute('aria-label','Excluir '+t.name);
+   del.addEventListener('click',()=>{if(confirm(`Excluir "${t.name}" da sua lista?`)){state.tasks=state.tasks.filter(x=>x.id!==t.id);save();render()}});
+   row.append(cb,info,streak,del);list.append(row);
+  });
+ }
+ draw('dueList',due,false,'Tudo em dia. Aproveite!');
+ draw('doneList',done,true,'Seus hábitos concluídos aparecerão aqui.');
+ draw('missedList',missed,false,'Nenhum hábito perdido ontem.');
  renderCalendar();
 }
 function renderCalendar(){
